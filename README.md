@@ -29,3 +29,10 @@
     10. criar rotas para /api/products
     11. retornar produtos
     12. run npm start
+
+7. Buscar produtos do backend
+    1. configurar um proxy no package.json
+    2. npm install axios
+    3. usar state hook
+    4. usar efect hook
+    5. usar reducer hook
