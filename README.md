@@ -15,3 +15,17 @@
     1. npm i react-router-dom  
     2. criando rota para página inicial (home)
     3. criando rota para página de produtos
+
+6. Criar um servidor com Node.JS
+    1. npm init na pasta raíz
+    2. Atualizar o packgage.json para :module
+    3. Adicionar .js(.jsx) para importar
+    4. npm install express
+    5. criar server.js
+    6. adicionar comando start para node backend/server.js
+    7. requisitar o express
+    8. criar rota para / pasta raíz retornando o backend quando preparado
+    9. mover products.jsx do frontend para o backend
+    10. criar rotas para /api/products
+    11. retornar produtos
+    12. run npm start
