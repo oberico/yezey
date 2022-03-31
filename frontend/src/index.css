@@ -8,12 +8,36 @@ body {
 }
 
 header{
-  background-color: blanchedalmond;
+  background-color: #161853;
   padding: 1rem;
 }
 
 header a{
-  color: black;
+  color: #FAEDF0;
   font-weight: bold;
   text-decoration: none;
+}
+
+main{
+  padding: 1rem;
+}
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.product{
+  border: 1px #292C6D solid;
+  margin: 1rem;
+}
+
+.product img{
+  width: 100%;
+  max-width: 400px;
+}
+
+.product-info {
+  padding: 1rem;
 }
