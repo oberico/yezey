@@ -1,5 +1,22 @@
 /*  Aqui estamos criando a parte de dados do produto */
+import bcrypt from 'bcryptjs';
+
 const data ={
+    users:[
+        {
+            name: 'Berico',
+            email: 'bericolanches@gmail.com',
+            password: bcrypt.hashSync('123456'),
+            isAdmin: true,
+        },
+        
+        {
+            name: 'Xocops',
+            email: 'xocopinhoturbinado@gmail.com',
+            password: bcrypt.hashSync('123123'),
+            isAdmin: false,
+        },
+    ],
     products: [
         {
             //_id: '1',
@@ -8,7 +25,7 @@ const data ={
             category: 'Yeezzy 500',
             image: '/images/YEEZY500BLUSH/backside.jpg',
             price: 500,
-            countInStock: 10,
+            countInStock: 0,
             brand: 'Adidas Yezzy',
             rating: 4.7,
             numReviews: 22,
@@ -22,7 +39,7 @@ const data ={
             category: 'Yeezzy 500',
             image: '/images/YEEZY500SALT/backside.jpg',
             price: 500,
-            countInStock: 10,
+            countInStock: 0,
             brand: 'Adidas Yezzy',
             rating: 4.2,
             numReviews: 19,
@@ -35,8 +52,8 @@ const data ={
             slug: 'yeezy-500-super-moon', /*slug é o que vai como chave unica e você vê na URL*/
             category: 'Yeezzy 500',
             image: '/images/YEEZY500SUPERMOON/backside.jpg',
-            price: 500,
-            countInStock: 10,
+            price: 1790,
+            countInStock: 23,
             brand: 'Adidas Yezzy',
             rating: 3.9,
             numReviews: 12,
@@ -49,8 +66,8 @@ const data ={
             slug: 'yeezy-500-utility black', /*slug é o que vai como chave unica e você vê na URL*/
             category: 'Yeezzy 500',
             image: '/images/YEEZY500UTILITYBLACK/backside.jpg',
-            price: 500,
-            countInStock: 0,
+            price: 2990,
+            countInStock: 1,
             brand: 'Adidas Yezzy',
             rating: 5,
             numReviews: 27,

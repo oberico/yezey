@@ -99,4 +99,9 @@
     4. usar a rota em server.js
     5. criar a amostra de produto com a semente
 
+20. Criar a semente dos usuários
+    1. criar o modelo de usuário
+    2. criar semente da amostra de usuários
+    3. criar as rotas para usuário
+
 
