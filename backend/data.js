@@ -2,6 +2,7 @@
 const data ={
     products: [
         {
+            _id: '1',
             name: 'Yeezy 500 Blush',
             slug: 'yeezy-500-blush', /*slug é o que vai como chave unica e você vê na URL*/
             category: 'Yeezzy 500',
@@ -14,7 +15,8 @@ const data ={
             description: 'pisante bacana',
         },
 
-        {
+        {  
+            _id: '2',
             name: 'Yeezy 500 Salt',
             slug: 'yeezy-500-salt', /*slug é o que vai como chave unica e você vê na URL*/
             category: 'Yeezzy 500',
@@ -28,6 +30,7 @@ const data ={
         },
 
         {
+            _id: '3',
             name: 'Yeezy 500 Super Moon ',
             slug: 'yeezy-500-super-moon', /*slug é o que vai como chave unica e você vê na URL*/
             category: 'Yeezzy 500',
@@ -41,6 +44,7 @@ const data ={
         },
 
         {
+          _id: '4',
             name: 'Yeezy 500 Utility Black',
             slug: 'yeezy-500-utility black', /*slug é o que vai como chave unica e você vê na URL*/
             category: 'Yeezzy 500',

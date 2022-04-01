@@ -66,3 +66,7 @@
     2. definindo reducer
     3. criando fornecedor da loja
     4. implementando o botão e o manipulador de adicionar ao carrinho 
+
+14. Melhorar adicionar ao carrinho
+    1. checar se o item já existe no carrinho
+    2. checar a quantidade em estoque no backend
