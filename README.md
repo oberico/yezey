@@ -80,3 +80,8 @@
     1. clique no controlador para incrementar/decrementar itens
     2.  clique no controlador para remover itens
     3.  clique no controlador para continuar para compra
+
+17. Criar a tela de inscrever (signin)
+    1. criar o formulário para inscrição
+    2. adicionar email e senha
+    3. adicionar o botão de inscrever/registrar
