@@ -41,4 +41,7 @@
     1. definir o reducer
     2. atualizar a busca de dados
     3. pegar o estado (get state) de usReducer
-    
+
+9. Adicionar Bootstrap
+    1. npm install react-bootstrap bootstrap@5.1.3
+    2. atualizar App.js
