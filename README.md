@@ -91,3 +91,12 @@
     2. instalar uma base de dados local do mongodb
     3. instalar o mongoose (npm install mongoose)para gerenciar o bd
     4. connect to mongodb database
+
+19. Criar a semente das amostras de dado
+    1. criar um modelo de produto
+    2. criar um modelo de usuário
+    3. criar a rota da seed(semente)
+    4. usar a rota em server.js
+    5. criar a amostra de produto com a semente
+
+
