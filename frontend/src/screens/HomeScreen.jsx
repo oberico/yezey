@@ -1,14 +1,41 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-// import data from "../data.js"; 
+import logger from 'use-reducer-logger'; //serve para criar um log das alterações feitas usando o hook reduce
+// import data from "../data.js";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'FETCH_REQUEST':
+      return { ...state, loading: true };
+    case 'FETCH_SUCCESS':
+      return { ...state, products: action.payload, loading: false };
+    case 'FETCH_FAIL':
+      return { ...state, loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
 
 function HomeScreen() {
-  const[products, setProducts] = useState([]);
-  useEffect(()=>{
+  const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
+    products: [],
+    loading: true,
+    error: '',
+  });
+
+  // const [products, setProducts] = useState([]);
+
+  useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('/api/products');
-      setProducts(result.data);
+      dispatch({ type: 'FETCH_REQUEST' });
+      try {
+        const result = await axios.get('/api/products');
+        dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+      } catch (err) {
+        dispatch({ type: 'FETCH_FAIL', payload: err.message });
+      }
+      // setProducts(result.data);
     };
     fetchData();
   }, []);
@@ -17,23 +44,29 @@ function HomeScreen() {
       <h1>Tênis em destaque</h1>
 
       <div className="products">
-        {products.map((product) => (
-          <div className="product" key={product.slug}>
-            <Link to={`/product/${product.slug}`}>
-              <img src={product.image} alt={product.name} />
-            </Link>
-            <div className="product-info">
+        {loading ? (
+          <div>Carregando...</div>
+        ) : error ? (
+          <div>{error}</div>
+        ) : (
+          products.map((product) => (
+            <div className="product" key={product.slug}>
               <Link to={`/product/${product.slug}`}>
-                <p>{product.name}</p>
+                <img src={product.image} alt={product.name} />
               </Link>
+              <div className="product-info">
+                <Link to={`/product/${product.slug}`}>
+                  <p>{product.name}</p>
+                </Link>
 
-              <strong>
-                <p>R${product.price}</p>
-              </strong>
-              <button>Adicionar ao Carrinho</button>
+                <strong>
+                  <p>R${product.price}</p>
+                </strong>
+                <button>Adicionar ao Carrinho</button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

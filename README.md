@@ -36,3 +36,9 @@
     3. usar state hook
     4. usar efect hook
     5. usar reducer hook
+
+8. Gerenciar estado usando reducer hook
+    1. definir o reducer
+    2. atualizar a busca de dados
+    3. pegar o estado (get state) de usReducer
+    
