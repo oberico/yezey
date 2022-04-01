@@ -70,3 +70,9 @@
 14. Melhorar adicionar ao carrinho
     1. checar se o item já existe no carrinho
     2. checar a quantidade em estoque no backend
+
+15. Criar tela do carrinho
+    1. cirar duas colunas
+    2. mostrar uma lista de itens
+    3. criar a coluna de ação
+
