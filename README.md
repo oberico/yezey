@@ -104,4 +104,9 @@
     2. criar semente da amostra de usuários
     3. criar as rotas para usuário
 
+21. Criar a API para registro (signin) no backend
+    1. create signin api
+    2. npm install jsonwebtoken
+    3. definir gerenateToken
+
 
