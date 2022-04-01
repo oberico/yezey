@@ -60,3 +60,9 @@
     2. usar o componente spinner
     3. criar um componente de mensagem
     4. criar utils.js para definir a função getError
+
+13. Implementar "Adicionar ao carrinho"
+    1. Criando react context
+    2. definindo reducer
+    3. criando fornecedor da loja
+    4. implementando o botão e o manipulador de adicionar ao carrinho 

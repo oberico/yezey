@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import logger from 'use-reducer-logger'; //serve para criar um log das alterações feitas usando o hook reduce
 import Row from 'react-bootstrap/Row';
