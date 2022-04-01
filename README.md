@@ -76,3 +76,7 @@
     2. mostrar uma lista de itens
     3. criar a coluna de ação
 
+16. Completar a tela do carrinho
+    1. clique no controlador para incrementar/decrementar itens
+    2.  clique no controlador para remover itens
+    3.  clique no controlador para continuar para compra

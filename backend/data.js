@@ -50,7 +50,7 @@ const data ={
             category: 'Yeezzy 500',
             image: '/images/YEEZY500UTILITYBLACK/backside.jpg',
             price: 500,
-            countInStock: 0,
+            countInStock: 1,
             brand: 'Adidas Yezzy',
             rating: 5,
             numReviews: 27,
