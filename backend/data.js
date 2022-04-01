@@ -44,13 +44,13 @@ const data ={
         },
 
         {
-          _id: '4',
+            _id: '4',
             name: 'Yeezy 500 Utility Black',
             slug: 'yeezy-500-utility black', /*slug é o que vai como chave unica e você vê na URL*/
             category: 'Yeezzy 500',
             image: '/images/YEEZY500UTILITYBLACK/backside.jpg',
             price: 500,
-            countInStock: 1,
+            countInStock: 0,
             brand: 'Adidas Yezzy',
             rating: 5,
             numReviews: 27,

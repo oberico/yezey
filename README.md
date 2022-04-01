@@ -85,3 +85,9 @@
     1. criar o formulário para inscrição
     2. adicionar email e senha
     3. adicionar o botão de inscrever/registrar
+
+18. Conectar ao banco de dados MongoDB
+    1. criar uma base de dados atlas mongodb
+    2. instalar uma base de dados local do mongodb
+    3. instalar o mongoose (npm install mongoose)para gerenciar o bd
+    4. connect to mongodb database
