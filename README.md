@@ -50,3 +50,7 @@
     1. criar o componente de avaliação
     2. criar o componente do produto
     3. usar o compronente de avaliação no componente de produto
+
+11. Criar tela de detalhes do produto
+    1. buscar produto direto do backend
+    2. criar 3 colunas para imagem, info e ação

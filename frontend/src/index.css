@@ -22,15 +22,15 @@ main{
 }
 
 .btn-primary {
-  background-color: #333C83;
-  color: #FAEDF0;
-  border: #333C83;
+  background-color: #22577A;
+  color: #ffff;
+  border: #22577A;
 }
 
 .btn-primary:hover {
-  color: #333C83;
-  background-color: #FAEDF0;
-  border-color: #333C83;
+  color: #22577A;
+  background-color: #80ED99;
+  border-color: #22577A;
 }
 
 .products{
@@ -57,4 +57,8 @@ main{
 
 .product-info {
   padding: 1rem;
+}
+
+.img-large{
+  max-width: 100%;
 }
