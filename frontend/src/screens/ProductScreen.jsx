@@ -9,10 +9,9 @@ import Badge from 'react-bootstrap/esm/Badge';
 import Card from 'react-bootstrap/esm/Card';
 import Button from 'react-bootstrap/esm/Button';
 import { Helmet } from 'react-helmet-async';
-
-
-
-
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
+import { getError } from '../utils';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -44,82 +43,88 @@ function ProductScreen() {
         const result = await axios.get(`/api/products/slug/${slug}`);
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: err.message });
+        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
     };
     fetchData();
   }, [slug]);
 
-  return loading? (
-     <div>Carregando...</div>
-     ) : error ? (
-        <div>{error}</div>
-    ) : (
-        <div>
-            <Row>
-                <Col md={6}>
-                    <img className="img-large"
-                    src={product.image}
-                    alt={product.name}>
-                    </img>
-                </Col>
+  return loading ? (
+    <LoadingBox />
+  ) : error ? (
+    <MessageBox variant="danger">{error}</MessageBox>
+  ) : (
+    <div>
+      <Row>
+        <Col md={6}>
+          <img
+            className="img-large"
+            src={product.image}
+            alt={product.name}
+          ></img>
+        </Col>
 
-                <Col md={3}>
-                    <ListGroup variant="flush">
-                        <ListGroup.Item>
-                            <Helmet>
-                                <title>{product.name}</title>
-                            </Helmet>
-                            <h1>{product.name}</h1>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <Rating rating={product.rating} numReviews={product.numReviews}></Rating>
-                        </ListGroup.Item>
-                        <ListGroup.Item>Preço: <strong>R${product.price}</strong></ListGroup.Item>
-                        <ListGroup.Item>
-                            <h6>Descrição</h6>
-                            <p>{product.description}</p>
-                        </ListGroup.Item>
-                    </ListGroup>
-                </Col>
+        <Col md={3}>
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+              <Helmet>
+                <title>{product.name}</title>
+              </Helmet>
+              <h1>{product.name}</h1>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <Rating
+                rating={product.rating}
+                numReviews={product.numReviews}
+              ></Rating>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              Preço: <strong>R${product.price}</strong>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <h6>Descrição</h6>
+              <p>{product.description}</p>
+            </ListGroup.Item>
+          </ListGroup>
+        </Col>
 
-                <Col md={3}>
-                    <Card>
-                        <Card.Body>
-                            <ListGroup variant="flush">
-                                <ListGroup.Item>
-                                    <Row>
-                                        <Col>Preço:</Col>
-                                        <Col>R${product.price}</Col>
-                                    </Row>
-                                </ListGroup.Item>
-                                <ListGroup.Item>
-                                    <Row>
-                                        <Col>Status:</Col>
-                                        <Col>{product.countInStock>0?
-                                        <Badge bg="success">Em Estoque</Badge>
-                                        :
-                                        <Badge bg="danger">Indisponível</Badge>
-                                    }</Col>
-                                    </Row>
-                                </ListGroup.Item>
-                                <ListGroup.Item>
-                                    {product.countInStock > 0 &&(
-                                        <ListGroup.Item>
-                                            <div className="d-grid">
-                                                <Button variant="primary">Adicionar ao Carrinho</Button>
-                                            </div>
-                                        </ListGroup.Item>
-                                        
-                                    )}
-                                </ListGroup.Item>
-
-                            </ListGroup>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </div>
-    );
+        <Col md={3}>
+          <Card>
+            <Card.Body>
+              <ListGroup variant="flush">
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Preço:</Col>
+                    <Col>R${product.price}</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Status:</Col>
+                    <Col>
+                      {product.countInStock > 0 ? (
+                        <Badge bg="success">Em Estoque</Badge>
+                      ) : (
+                        <Badge bg="danger">Indisponível</Badge>
+                      )}
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  {product.countInStock > 0 && (
+                    <ListGroup.Item>
+                      <div className="d-grid">
+                        <Button variant="primary">Adicionar ao Carrinho</Button>
+                      </div>
+                    </ListGroup.Item>
+                  )}
+                </ListGroup.Item>
+              </ListGroup>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </div>
+  );
 }
 export default ProductScreen;

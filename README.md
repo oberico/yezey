@@ -54,3 +54,9 @@
 11. Criar tela de detalhes do produto
     1. buscar produto direto do backend
     2. criar 3 colunas para imagem, info e ação
+
+12. Criar componentes de carregamento e mensagem
+    1. criar compontende de carregamento (loading)
+    2. usar o componente spinner
+    3. criar um componente de mensagem
+    4. criar utils.js para definir a função getError
