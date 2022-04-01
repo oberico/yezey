@@ -12,15 +12,38 @@ body {
 
 }
 
+a {
+  color: #333C83;
+  text-decoration: none;
+}
+
 main{
   flex: 1;
 }
+
+.btn-primary {
+  background-color: #333C83;
+  color: #FAEDF0;
+  border: #333C83;
+}
+
+.btn-primary:hover {
+  color: #333C83;
+  background-color: #FAEDF0;
+  border-color: #333C83;
+}
+
 .products{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
 }
+
+.rating span{
+  color: #FDAF75;
+}
+
 
 .product{
   border: 1px #292C6D solid;

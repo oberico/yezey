@@ -45,3 +45,8 @@
 9. Adicionar Bootstrap
     1. npm install react-bootstrap bootstrap@5.1.3
     2. atualizar App.js
+
+10. Criando produto e componente de avaliações
+    1. criar o componente de avaliação
+    2. criar o componente do produto
+    3. usar o compronente de avaliação no componente de produto
