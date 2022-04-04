@@ -109,4 +109,8 @@
     2. npm install jsonwebtoken
     3. definir gerenateToken
 
+22. Completar a tela de registo (signin)
+    1. lidar com a ação de envio
+    2. salvar token na aplicação e no armazenamento local
+    3. mostrar o nome de usuário no header
 
